@@ -1,0 +1,1 @@
+(()=>{"use strict";function n(n){return"Hello, ".concat(n,"!")}console.debug(n("Anna")),console.debug(n("Olga"))})();
