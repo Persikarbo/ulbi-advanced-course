@@ -4,6 +4,7 @@ import { buildPlugins } from "./buildPlugins";
 import { buildLoaders } from "./buildLoaders";
 import { buildResolvers } from "./buildResolvers";
 import { buildDevServer } from "./buildDevServer";
+import { buildMinimizers } from "./buildMinimizers";
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
 
@@ -21,8 +22,12 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         devServer: isDev ? buildDevServer(options) : undefined,
         plugins: buildPlugins(options),
         module: {
-            rules: buildLoaders(),
+            rules: buildLoaders(options),
         },
         resolve: buildResolvers(),
+        optimization: {
+            minimizer: buildMinimizers(),
+            minimize: true
+        },
     }
 }
