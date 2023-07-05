@@ -1,6 +1,7 @@
 import webpack from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/config";
+import path from "path";
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
@@ -19,7 +20,14 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                     },
                 }
             },
-            "postcss-loader"
+            {
+                loader: "postcss-loader",
+                options: {
+                    postcssOptions: {
+                        config: path.resolve("postcss.config.js"),
+                    }
+                }
+            }
         ],
     }
 

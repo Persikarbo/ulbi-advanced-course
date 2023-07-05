@@ -1,7 +1,7 @@
 module.exports = {
   plugins: [
-    [
-      "postcss-preset-env",
-    ]
+    "postcss-preset-env",
+    require("postcss-import"),
+    require("postcss-mixins")
   ]
 };

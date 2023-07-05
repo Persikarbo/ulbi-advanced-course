@@ -14,7 +14,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         mode,
         entry: paths.entry,
         output: {
-            filename: "[contenthash].bundle.js",
+            filename: "[name].[contenthash].bundle.js",
             path: paths.build,
             clean: true
         },
