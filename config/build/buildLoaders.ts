@@ -24,7 +24,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                 loader: "postcss-loader",
                 options: {
                     postcssOptions: {
-                        config: path.resolve("postcss.config.js"),
+                        config: path.resolve("postcss.config.js")
                     }
                 }
             }
@@ -37,8 +37,17 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     }
 
+    const assetsFonts = {
+        test: /\.(woff|woff2)$/i,
+        type: "asset/resource",
+        generator: {
+            filename: "fonts/[hash][ext][query]"
+        }
+    }
+
     return [
         typeScriptLoader,
+        assetsFonts,
         cssLoader
     ]
 }

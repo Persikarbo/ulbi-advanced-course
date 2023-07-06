@@ -1,9 +1,9 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import "./styles/index.pcss";
 import { Link, useRoutes } from "react-router-dom";
-import { AboutPage, MainPage } from "./pages";
-import { useTheme } from "./theme/useTheme";
-import { classNames } from "./utils/classNames";
+import { AboutPage, MainPage } from "pages";
+import { useTheme } from "app/providers";
+import { classNames } from "shared/lib";
 
 export const App = () => {
 

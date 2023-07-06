@@ -1,0 +1,1 @@
+export { MainLazy as MainPage } from "./ui/index.lazy";
