@@ -9,6 +9,8 @@ export function buildResolvers({ paths }: BuildOptions): ResolveOptions {
         modules: [
             paths.src, "node_modules"
         ],
-        alias: {}
+        alias: {
+            "@assets": paths.assets
+        }
     }
 }

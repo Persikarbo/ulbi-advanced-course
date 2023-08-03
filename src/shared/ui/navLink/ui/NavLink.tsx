@@ -1,16 +1,16 @@
 import { classNames } from "shared/lib";
-import cls from "./NavLink.module.pcss";
+import styles from "./NavLink.module.pcss";
 import { Link, LinkProps } from "react-router-dom";
 import { FC } from "react";
 
-export enum AppLinkTheme {
+export enum ThemeNavLink {
     DEFAULT = "",
     INVERTED = "inverted"
 }
 
 interface NavLinkProps extends LinkProps {
     className?: string;
-    theme?: AppLinkTheme;
+    theme?: ThemeNavLink;
 }
 
 export const NavLink: FC<NavLinkProps> = (props) => {
@@ -19,13 +19,13 @@ export const NavLink: FC<NavLinkProps> = (props) => {
         className,
         to,
         children,
-        theme= AppLinkTheme.DEFAULT,
+        theme= ThemeNavLink.DEFAULT,
         ...restProps
     } = props;
 
     return (
         <Link to={to}
-              className={classNames(cls.navLink, {}, [ className, cls[theme] ])}
+              className={classNames(styles.navLink, {}, [ className, styles[theme] ])}
               {...restProps}
         >
             {children}

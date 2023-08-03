@@ -3,7 +3,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/config";
 import path from "path";
 
-export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders({ isDev, paths }: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoader = {
         test: /\.(p)css$/i,
@@ -15,7 +15,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                     modules: {
                         auto: /\.module\..*$/,
                         localIdentName: isDev
-                            ? "[path][name]__[local]--[hash:base64:4]"
+                            ? "[name]__[local]--[hash:base64:4]"
                             : "[hash:base64:8]"
                     },
                 }
@@ -37,7 +37,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     }
 
-    const assetsFonts = {
+    const fontsLoader = {
         test: /\.(woff|woff2)$/i,
         type: "asset/resource",
         generator: {
@@ -45,9 +45,24 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         }
     }
 
+    const iconsLoader = {
+        test: /\.svg$/i,
+        loader: "svg-sprite-loader"
+    }
+
+    const imagesLoader = {
+        test: /\.(png|jpe?g|gif)$/i,
+        type: "asset/resource",
+        generator: {
+            filename: "images/[hash][ext][query]"
+        }
+    }
+
     return [
         typeScriptLoader,
-        assetsFonts,
-        cssLoader
+        cssLoader,
+        fontsLoader,
+        iconsLoader,
+        imagesLoader
     ]
 }

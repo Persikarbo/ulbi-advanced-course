@@ -2,6 +2,7 @@ module.exports = {
   plugins: [
     "postcss-preset-env",
     "postcss-import",
-    "postcss-mixins"
+    "postcss-mixins",
+    "postcss-nested"
   ]
 };
