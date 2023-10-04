@@ -2,7 +2,7 @@ import "./styles/index.pcss";
 import { useTheme } from "app/providers";
 import { classNames } from "shared/lib";
 import { AppRouter } from "app/providers/router";
-import { Navbar } from "widgets/navbar";
+import { Header } from "widgets/header";
 
 export const App = () => {
 
@@ -10,7 +10,7 @@ export const App = () => {
 
     return (
         <div className={classNames("app", {}, [ theme ])}>
-            <Navbar />
+            <Header />
             <AppRouter />
         </div>
     );

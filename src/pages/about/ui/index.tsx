@@ -1,9 +1,11 @@
+import { PageLayout } from "shared/ui/pageLayout";
+
 const About = () => {
 
     return (
-        <div>
+        <PageLayout>
             ABOUT PAGE
-        </div>
+        </PageLayout>
     )
 }
 

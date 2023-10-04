@@ -13,7 +13,10 @@ export function buildLoaders({ isDev, paths }: BuildOptions): webpack.RuleSetRul
                 loader: "css-loader",
                 options: {
                     modules: {
-                        auto: /\.module\..*$/
+                        auto: /\.module\..*$/,
+                        localIdentName: isDev
+                            ? "[name]__[local]--[hash:base64:4]"
+                            : "[hash:base64:8]"
                     },
                 }
             },

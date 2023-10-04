@@ -1,17 +1,30 @@
 .button {
-  padding: 0;
+  --buttonColor: var(--themePrimaryColor);
+  --buttonPadding: 0;
+  --buttonBorderWidth: 0;
+  --buttonBorderColor: transparent;
+  --buttonBorderRadius: 0;
+
+  padding: var(--buttonPadding);
   margin: 0;
   background: none;
-  border: none;
+  color: var(--buttonColor);
+  border: var(--buttonBorderWidth) solid var(--buttonBorderColor);
   outline: none;
   cursor: pointer;
   max-height: 100%;
-
-  &--red {
-    color: red;
-  }
+  border-radius: var(--buttonBorderRadius);
+  transition: .3s all;
 
   &.bordered {
-    border: 1px solid var(--themeInvertedPrimaryColor);
+    --buttonPadding: 1rem 2rem;
+    --buttonBorderWidth: 2px;
+    --buttonBorderColor: var(--themePrimaryColor);
+    --buttonBorderRadius: 2rem;
+  }
+
+  &:hover {
+    --buttonColor: var(--themeInvertedPrimaryColor);
+    --buttonBorderColor: var(--themeInvertedPrimaryColor);
   }
 }

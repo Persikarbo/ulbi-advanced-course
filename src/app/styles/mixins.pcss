@@ -2,3 +2,10 @@
   font-size: 3rem;
   line-height: ratio(4rem, 3rem);
 }
+
+@define-mixin nlc {
+
+  &:not(:last-child) {
+    @mixin-content;
+  }
+}
