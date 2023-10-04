@@ -8,7 +8,8 @@ export enum IconSize {
 }
 
 interface IconProps extends SVGAttributes<SVGSVGElement> {
-    size?: IconSize
+    size?: IconSize,
+    url?: string
 }
 
 export const Icon = (props: IconProps) => {
@@ -17,12 +18,13 @@ export const Icon = (props: IconProps) => {
         id,
         className,
         size,
+        url,
         ...restProps
     } = props;
 
     return (
         <svg className={classNames(styles.icon, {}, [ className, styles[size] ])} { ...restProps } >
-            <use href={`#${id}`} />
+            <use href={url} />
         </svg>
     );
 };

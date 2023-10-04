@@ -13,10 +13,7 @@ export function buildLoaders({ isDev, paths }: BuildOptions): webpack.RuleSetRul
                 loader: "css-loader",
                 options: {
                     modules: {
-                        auto: /\.module\..*$/,
-                        localIdentName: isDev
-                            ? "[name]__[local]--[hash:base64:4]"
-                            : "[hash:base64:8]"
+                        auto: /\.module\..*$/
                     },
                 }
             },
@@ -47,7 +44,10 @@ export function buildLoaders({ isDev, paths }: BuildOptions): webpack.RuleSetRul
 
     const iconsLoader = {
         test: /\.svg$/i,
-        loader: "svg-sprite-loader"
+        loader: "svg-sprite-loader",
+        options: {
+            extract: true
+        }
     }
 
     const imagesLoader = {

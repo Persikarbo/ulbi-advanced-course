@@ -21,7 +21,7 @@ export const SwitchTheme = (props: ThemeSwitcherProps) => {
         <Button className={classNames(styles.themeSwitcher, {}, [ className ])}
                 onClick={toggleTheme}
         >
-            <Icon id={IconTheme.id} size={IconSize.L}/>
+            <Icon url={IconTheme.url} size={IconSize.L}/>
         </Button>
     );
 };

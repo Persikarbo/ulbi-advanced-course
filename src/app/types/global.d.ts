@@ -7,6 +7,10 @@ declare module "*.pcss" {
 }
 
 declare module "*.svg" {
+
+    interface SVGSymbolElement {
+        url: string
+    }
     const SVG: SVGSymbolElement;
     export = SVG;
 }
