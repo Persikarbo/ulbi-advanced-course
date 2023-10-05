@@ -20,6 +20,7 @@ export const modules: ReactQuillModules = {
             { indent: '-1' },
             { indent: '+1' }
         ],
+        [{ align: '' }, { align: 'center' }, { align: 'right' }, { align: 'justify' }],
         ['link', 'image', 'video'],
         ['clean']
     ],

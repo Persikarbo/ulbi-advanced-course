@@ -1,11 +1,13 @@
 import { FC } from "react";
 import { classNames } from "shared/lib";
 import styles from "./Wysiwyg.module.pcss";
+import "./quill.pcss";
 import { ComponentProps } from "shared/types";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { WysiwygOnChangeFunction } from "../config/types";
 import { modules } from "../config/modules";
+import { formats } from "../config/formats";
 
 interface WysiwygProps extends ComponentProps {
     id: string;
@@ -35,6 +37,7 @@ export const Wysiwyg: FC<WysiwygProps> = (props) => {
                         onChange={(...args) => onChange(id, ...args)}
                         className={classNames(styles.quill)}
                         modules={modules}
+                        formats={formats}
             />
         </div>
     );

@@ -17,11 +17,8 @@ export const Preview: FC<PreviewProps> = (props) => {
         isSanitizerEnabled = true
     } = props;
 
-    const cleanHTML = isSanitizerEnabled ? sanitizeHtml(html) : html;
-
     return (
         <div className={classNames(styles.preview, {}, [ className ])}
-             dangerouslySetInnerHTML={{__html: cleanHTML}}
-        />
+             dangerouslySetInnerHTML={{ __html: isSanitizerEnabled ? sanitizeHtml(html) : html}}/>
     )
 }

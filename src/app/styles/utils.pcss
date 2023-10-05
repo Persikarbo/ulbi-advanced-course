@@ -1,0 +1,11 @@
+@import "@styles/mixins.pcss";
+
+@for $i from 1 to 8 {
+
+  .mb-$(i) {
+    @mixin nlc {
+      display: block;
+      margin-bottom: $(i)rem;
+    }
+  }
+}

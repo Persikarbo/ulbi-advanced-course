@@ -19,7 +19,7 @@ export const appRoutes: RouteObject[] = [
         element: <MainPage />
     },
     {
-        path: RoutePath.templateEditor,
+        path: `${RoutePath.templateEditor}/*`,
         element: <TemplateEditorPage />
     },
     {

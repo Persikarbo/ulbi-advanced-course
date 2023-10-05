@@ -3,6 +3,7 @@ import {
     TemplateEditorActionType,
     TemplateEditorState
 } from "widgets/templateEditor/config/types";
+import { getEmailTemplate } from "entities/email";
 
 export interface TemplateEditorModel {
     reducer?(state: TemplateEditorState, action: TemplateEditorAction): TemplateEditorState;
@@ -15,7 +16,14 @@ export class Model implements TemplateEditorModel {
 
         switch (type) {
             case TemplateEditorActionType.SET_BLOCK:
-                return { ...state, blocks: { ...state.blocks, [payload.id]: payload.value } }
+                const blocks = { ...state.blocks, [payload.id]: payload.value };
+                return {
+                    ...state,
+                    blocks,
+                    template: getEmailTemplate(blocks)
+                }
+            default:
+                return state
         }
     }
 }

@@ -16,6 +16,7 @@ type TemplateEditorAction = {
 
 type TemplateEditorState = {
     blocks: EmailTemplateBlocks;
+    template: string;
 };
 
 export {
