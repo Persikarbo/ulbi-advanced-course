@@ -5,7 +5,7 @@ import { Container } from "shared/ui/container";
 import { ComponentProps } from "shared/types";
 
 interface PageLayoutProps extends ComponentProps {
-    headerSlot?: ReactNode,
+    headerSlot?: ReactNode;
 }
 
 export const PageLayout: FC<PageLayoutProps> = (props) => {
@@ -19,16 +19,16 @@ export const PageLayout: FC<PageLayoutProps> = (props) => {
 
     return (
         <main className={classNames(styles.pageLayout, {}, [ className ])} {...restProps}>
-            <div className={classNames(styles.wrapper)}>
-                <Container>
+            <Container>
+                <div className={classNames(styles.wrapper)}>
                     {headerSlot && <div className={classNames(styles.header)}>
                         {headerSlot}
                     </div>}
                     <div className={classNames(styles.body)}>
                         {children}
                     </div>
-                </Container>
-            </div>
+                </div>
+            </Container>
         </main>
     );
 };

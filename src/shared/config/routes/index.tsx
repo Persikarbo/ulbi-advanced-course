@@ -1,16 +1,16 @@
 import { RouteObject } from "react-router-dom";
-import { AboutPage, EmailEditorPage, MainPage } from "pages";
+import { AboutPage, TemplateEditorPage, MainPage } from "pages";
 
 export enum AppRoutes {
     MAIN = "main",
     ABOUT = "about",
-    EMAIL_EDITOR = "emailEditor"
+    TEMPLATE_EDITOR = "templateEditor"
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: "/",
     [AppRoutes.ABOUT]: "/about",
-    [AppRoutes.EMAIL_EDITOR]: "/email-editor"
+    [AppRoutes.TEMPLATE_EDITOR]: "/template-editor"
 }
 
 export const appRoutes: RouteObject[] = [
@@ -19,8 +19,8 @@ export const appRoutes: RouteObject[] = [
         element: <MainPage />
     },
     {
-        path: RoutePath.emailEditor,
-        element: <EmailEditorPage />
+        path: RoutePath.templateEditor,
+        element: <TemplateEditorPage />
     },
     {
         path: RoutePath.about,

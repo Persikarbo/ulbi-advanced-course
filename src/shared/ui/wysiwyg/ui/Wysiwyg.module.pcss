@@ -1,3 +1,13 @@
 .wysiwyg {
+  --wysiwygWidth: 100%;
+  --wysiwygHeight: 100%;
 
+  height: var(--wysiwygHeight);
+
+  .quill {
+    width: var(--wysiwygWidth);
+    height: var(--wysiwygHeight);
+    display: flex;
+    flex-direction: column;
+  }
 }

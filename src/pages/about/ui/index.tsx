@@ -1,6 +1,6 @@
 import { PageLayout } from "shared/ui/pageLayout";
 
-const About = () => {
+const AboutPage = () => {
 
     return (
         <PageLayout>
@@ -9,4 +9,4 @@ const About = () => {
     )
 }
 
-export default About;
+export default AboutPage;

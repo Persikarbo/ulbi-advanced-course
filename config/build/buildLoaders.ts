@@ -6,7 +6,7 @@ import path from "path";
 export function buildLoaders({ isDev, paths }: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoader = {
-        test: /\.(p)css$/i,
+        test: /\.p?css$/i,
         use: [
             isDev ? "style-loader" : MiniCssExtractPlugin.loader,
             {

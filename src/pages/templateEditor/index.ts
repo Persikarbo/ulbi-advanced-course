@@ -1,0 +1,1 @@
+export { TemplateEditorLazy as TemplateEditorPage } from "./ui/index.lazy";

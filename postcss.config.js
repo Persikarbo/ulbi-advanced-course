@@ -16,6 +16,7 @@ module.exports = {
     ],
     "postcss-mixins",
     "postcss-nested",
+    "postcss-for",
     "postcss-preset-env"
   ]
 };

@@ -1,14 +1,14 @@
 import { PageLayout } from "shared/ui/pageLayout";
 import { BackBtn } from "shared/ui/backBtn";
-import { Wysiwyg } from "shared/ui/wysiwyg";
+import { TemplateEditor } from "widgets/templateEditor";
 
-const EmailEditor = () => {
+const TemplateEditorPage = () => {
 
     return (
         <PageLayout headerSlot={<BackBtn />}>
-            <Wysiwyg />
+            <TemplateEditor />
         </PageLayout>
     )
 }
 
-export default EmailEditor;
+export default TemplateEditorPage;

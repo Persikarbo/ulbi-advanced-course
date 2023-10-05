@@ -1,0 +1,24 @@
+.grid {
+  --gridGapX: 3rem;
+  --gridGapY: 4rem;
+
+  display: grid;
+  height: 100%;
+  width: 100%;
+  gap: var(--gridGapY) var(--gridGapX);
+
+  @for $i from 1 to 12 {
+
+    &.columns-$(i) {
+      grid-template-columns: repeat($(i), 1fr);
+    }
+  }
+
+  &.gapX-0 {
+    --gridGapX: 0;
+  }
+
+  &__item {
+
+  }
+}
