@@ -17,7 +17,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             filename: "[name].[contenthash].bundle.js",
             path: paths.build,
             clean: true,
-            publicPath: "/"
+            publicPath: isDev ? "/" : "/ulbi-advanced-course/build/"
         },
         devtool: isDev ? "inline-source-map" : undefined,
         devServer: isDev ? buildDevServer(options) : undefined,
