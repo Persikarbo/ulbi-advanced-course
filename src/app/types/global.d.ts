@@ -22,3 +22,4 @@ declare module "*.gif";
 
 declare module "quill-image-resize-module-react";
 declare module "quill-blot-formatter";
+declare module "@editorjs/*"
